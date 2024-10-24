@@ -33,6 +33,16 @@ const questions = [
         definition: "AWS Lambda gestiona automáticamente la infraestructura, lo que significa que no necesitas preocuparte por los servidores. Solo pagas por el tiempo de ejecución y la cantidad de memoria utilizada por tus funciones, lo que puede hacer que sea una opción rentable para cargas de trabajo intermitentes."
     },
     {
+        question: "En un entorno de múltiples cuentas de AWS, ¿cómo puedes implementar una arquitectura de red segura utilizando VPCs?",
+        answers: [
+            { text: "Implementando VPC Peering y VPNs entre cuentas, y utilizando controles de acceso adecuados para gestionar la comunicación.", correct: true },
+            { text: "Utilizando solo VPCs públicas para garantizar la disponibilidad en todas las cuentas.", correct: false },
+            { text: "Centralizando todos los recursos en una única cuenta para evitar la complejidad de múltiples VPCs.", correct: false },
+            { text: "Aislando cada cuenta en su propia región de AWS para mejorar la seguridad.", correct: false }
+        ],
+        definition: "Para implementar una arquitectura de red segura en múltiples cuentas de AWS, se puede utilizar VPC Peering para habilitar la comunicación entre VPCs y VPNs para conectar redes locales a las VPCs. Es importante gestionar los controles de acceso y las políticas de seguridad para asegurar la comunicación entre recursos."
+    },
+    {
         question: "¿Qué servicio de AWS se utiliza para ejecutar código sin necesidad de aprovisionar servidores?",
         answers: [
             { text: "AWS Lambda", correct: true },
@@ -43,6 +53,16 @@ const questions = [
         definition: "AWS Lambda permite ejecutar código en respuesta a eventos y automáticamente gestiona la infraestructura subyacente, eliminando la necesidad de aprovisionar servidores."
     },
     {
+        question: "¿Qué consideraciones de seguridad debes tener en cuenta al crear IAM Users y políticas en AWS?",
+        answers: [
+            { text: "Aplicar el principio de privilegio mínimo, usar MFA y revisar regularmente las políticas de acceso.", correct: true },
+            { text: "Crear IAM Users con acceso de administrador por defecto para facilitar la gestión.", correct: false },
+            { text: "No es necesario auditar las políticas de acceso una vez creadas.", correct: false },
+            { text: "Limitar el uso de grupos, ya que complican la gestión de usuarios.", correct: false }
+        ],
+        definition: "Al crear IAM Users y políticas en AWS, es crucial aplicar el principio de privilegio mínimo, asegurando que los usuarios solo tengan los permisos necesarios. También es importante implementar la autenticación multifactor (MFA) y revisar las políticas de acceso de manera regular para garantizar la seguridad."
+    },
+    {
         question: "¿Qué es una VPC en AWS?",
         answers: [
             { text: "Una red virtual privada para aislar recursos", correct: true },
@@ -51,6 +71,26 @@ const questions = [
             { text: "Un tipo de instancias EC2", correct: false }
         ],
         definition: "Una VPC (Virtual Private Cloud) permite crear una red privada aislada dentro de AWS, donde puedes implementar recursos como EC2, RDS y más."
+    },
+    {
+        question: "¿Cuáles son las implicaciones de usar un RDS Multi-AZ en comparación con una configuración de RDS en una sola AZ?",
+        answers: [
+            { text: "Un RDS Multi-AZ proporciona alta disponibilidad y recuperación ante desastres, mientras que una sola AZ puede ser vulnerable a fallos.", correct: true },
+            { text: "Un RDS Multi-AZ es más barato y eficiente que uno en una sola AZ.", correct: false },
+            { text: "La configuración Multi-AZ permite realizar actualizaciones sin tiempo de inactividad, mientras que en una sola AZ el tiempo de inactividad es inevitable.", correct: false },
+            { text: "Ambas configuraciones ofrecen el mismo nivel de disponibilidad y rendimiento.", correct: false }
+        ],
+        definition: "Un RDS Multi-AZ proporciona alta disponibilidad y protección ante fallos, replicando automáticamente el almacenamiento de la base de datos en otra zona de disponibilidad. En comparación, una configuración en una sola AZ es más susceptible a interrupciones y no ofrece las mismas garantías de recuperación."
+    },
+    {
+        question: "Analiza la función de una VPN en un entorno de nube híbrido y sus beneficios frente a una conexión directa.",
+        answers: [
+            { text: "Las VPNs ofrecen una conexión encriptada a través de Internet, permitiendo una integración más flexible con recursos locales.", correct: true },
+            { text: "Las conexiones directas son siempre más seguras y no requieren configuración adicional.", correct: false },
+            { text: "Las VPNs son más rápidas y tienen menos latencia que las conexiones directas.", correct: false },
+            { text: "Las VPNs solo deben usarse en entornos de producción, no en desarrollo.", correct: false }
+        ],
+        definition: "Las VPNs permiten conectar de manera segura las redes locales con la nube, ofreciendo encriptación y flexibilidad en la integración. En comparación con las conexiones directas, las VPNs pueden ser más fáciles de configurar y administrar, aunque pueden tener una latencia más alta."
     },
     {
         question: "¿Cuál es el propósito de los IAM Users en AWS?",
@@ -124,6 +164,16 @@ const questions = [
         definition: "El comando `terraform apply` se utiliza para aplicar los cambios definidos en la configuración de Terraform a la infraestructura real."
     },
     {
+        question: "Analiza la función de una VPN en un entorno de nube híbrido y sus beneficios frente a una conexión directa.",
+        answers: [
+            { text: "Las VPNs ofrecen una conexión encriptada a través de Internet, permitiendo una integración más flexible con recursos locales.", correct: true },
+            { text: "Las conexiones directas son siempre más seguras y no requieren configuración adicional.", correct: false },
+            { text: "Las VPNs son más rápidas y tienen menos latencia que las conexiones directas.", correct: false },
+            { text: "Las VPNs solo deben usarse en entornos de producción, no en desarrollo.", correct: false }
+        ],
+        definition: "Las VPNs permiten conectar de manera segura las redes locales con la nube, ofreciendo encriptación y flexibilidad en la integración. En comparación con las conexiones directas, las VPNs pueden ser más fáciles de configurar y administrar, aunque pueden tener una latencia más alta."
+    },
+    {
         question: "¿Qué es un State File en Terraform?",
         answers: [
             { text: "Un archivo que mantiene el estado de la infraestructura gestionada", correct: true },
@@ -164,28 +214,25 @@ const questions = [
         definition: "Un VPC Endpoint permite a las instancias dentro de una VPC conectarse a servicios de AWS sin necesidad de acceder a Internet, mientras que un Internet Gateway permite la comunicación hacia y desde Internet."
     },
     {
-        question: "¿Qué es un Terraform Provider?",
+        question: "¿Qué estrategias puedes utilizar para asegurar que el State File de Terraform esté protegido y disponible?",
         answers: [
-            { text: "Un plugin que permite a Terraform interactuar con diferentes servicios", correct: true },
-            { text: "Un recurso específico de Terraform", correct: false },
-            { text: "Un módulo predefinido en Terraform", correct: false },
-            { text: "Un tipo de archivo de configuración", correct: false }
+            { text: "Usar un backend remoto como S3 con cifrado y acceso controlado para almacenar el State File de forma segura.", correct: true },
+            { text: "Mantener el State File en el mismo directorio que los archivos de configuración de Terraform.", correct: false },
+            { text: "El State File no necesita medidas de seguridad, ya que solo se utiliza localmente.", correct: false },
+            { text: "Usar archivos de texto plano para compartir el State File entre los miembros del equipo.", correct: false }
         ],
-        definition: "Un Terraform Provider es un plugin que permite a Terraform interactuar con diferentes APIs y servicios, facilitando la gestión de recursos en distintas plataformas."
+        definition: "Usar un backend remoto, como S3, con cifrado y control de acceso, es una estrategia efectiva para proteger el State File de Terraform. Esto asegura que el estado de la infraestructura esté seguro y disponible para los miembros del equipo."
     },
-
     {
-        question: "¿Qué es un bucket en Amazon S3?",
+        question: "¿Qué desafíos presenta la gestión de credenciales en un entorno de múltiples equipos utilizando Terraform?",
         answers: [
-            { text: "Un contenedor para almacenar objetos en S3", correct: true },
-            { text: "Un tipo de instancia EC2", correct: false },
-            { text: "Un servicio de balanceo de carga", correct: false },
-            { text: "Un archivo de log", correct: false }
+            { text: "La gestión de credenciales puede ser compleja, requiriendo prácticas de seguridad robustas para prevenir el acceso no autorizado.", correct: true },
+            { text: "No hay desafíos, ya que Terraform gestiona automáticamente las credenciales sin intervención del usuario.", correct: false },
+            { text: "Las credenciales solo deben ser almacenadas en el State File de Terraform.", correct: false },
+            { text: "Los entornos de múltiples equipos pueden simplificar la gestión de credenciales, ya que todos comparten las mismas credenciales.", correct: false }
         ],
-        definition: "Un bucket es un contenedor en Amazon S3 donde se almacenan los objetos. Cada bucket puede contener una cantidad ilimitada de objetos."
-    },
-
-    
+        definition: "La gestión de credenciales en un entorno de múltiples equipos puede ser compleja, requiriendo prácticas robustas de seguridad y control de acceso. Es crucial evitar el almacenamiento de credenciales sensibles en el State File y en su lugar utilizar herramientas de gestión de secretos."
+    }
 ];
 
 function shuffleArray(array) {
