@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Preguntados AWS</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Video de fondo -->
+    <video autoplay muted loop id="video-background">
+        <source src="imagenes/fondo.mp4" type="video/mp4">
+    </video>
+
+    <div id="game-container">
+        <h1>Preguntados DevOps Academy - AWS</h1>
+        <div id="question-container">
+            <p id="question">Pregunta...</p>
+            <div id="answer-buttons" class="btn-grid">
+                <button class="btn">Respuesta 1</button>
+                <button class="btn">Respuesta 2</button>
+                <button class="btn">Respuesta 3</button>
+                <button class="btn">Respuesta 4</button>
+            </div>
+        </div>
+        <div id="controls">
+            <button id="next-btn" class="hide">Siguiente</button>
+        </div>
+        <p id="score">Puntuación: 0</p>
+        <p id="feedback"></p>
+        <div id="definition-box" class="hide">
+            <p id="definition"></p>
+        </div>
+    </div>
+
+    <footer>
+        <p>Creado por:</p>
+        <ul>
+            <li>Rodrigo Spano - <a href="https://www.linkedin.com/in/rodrigospano/" target="_blank">LinkedIn</a></li>
+            <li>Rodrigo Ugidos - <a href="https://www.linkedin.com/in/rodrigo-ugidos-melillo-208309207/" target="_blank">LinkedIn</a></li>
+            <li>Juan Ignacio Artal - <a href="https://www.linkedin.com/in/juanignaciodev/" target="_blank">LinkedIn</a></li>
+        </ul>
+        <p>Este juego fue creado con la intención de aprender y prepararse para una entrevista.</p>
+        <p>Saludo para gabi sensei que fue la inspiracion para esta creacion.</p>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>
