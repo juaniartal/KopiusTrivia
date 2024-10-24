@@ -104,15 +104,3 @@ footer a {
 footer a:hover {
     text-decoration: underline;
 }
-
-/* Ajuste para pantallas pequeñas */
-@media (max-width: 600px) {
-    footer {
-        padding: 3px;
-        font-size: 10px; /* Tamaño de fuente más pequeño en móviles */
-    }
-
-    footer p {
-        margin: 1px 0;
-    }
-}
