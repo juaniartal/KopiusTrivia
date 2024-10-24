@@ -24,4 +24,8 @@ Esta aplicación web interactiva permite a los usuarios practicar preguntas y re
    git clone https://github.com/tu-usuario/tu-repositorio.git
 
 
+## WEB visual
+https://kopius-trivia.vercel.app/
+
+
    
