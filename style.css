@@ -106,18 +106,30 @@ footer a:hover {
 @media (max-width: 600px) {
     #game-container {
         width: 95%; 
-        min-height: 300px;
-        padding: 15px;
+        min-height: 300px; 
+        padding: 15px; 
         margin: 20px auto; 
     }
 
     footer {
         padding: 5px; 
-        font-size: 14px;
+        font-size: 14px; 
+        position: relative; 
+        bottom: 0; 
+        margin-top: auto; 
+    }
+
+    footer p {
+        margin: 3px 0; 
+    }
+
+    footer ul {
+        padding: 0; 
     }
 
     .btn {
         width: 100%; 
+        padding: 12px; 
     }
 
     .btn-grid {
@@ -126,6 +138,7 @@ footer a:hover {
 
     #definition-box {
         margin-top: 10px; 
+        padding: 15px;
     }
 }
 
