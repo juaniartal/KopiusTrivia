@@ -13,14 +13,24 @@ let score = 0;
 
 const questions = [
     {
-        question: "¿Cuál es la diferencia principal entre un Security Group y un Network ACL?",
+        question: "¿Cómo afectan los Security Groups y los Network ACLs en la configuración de una VPC?",
         answers: [
-            { text: "Un Security Group se aplica a instancias y un ACL se aplica a subredes", correct: true },
-            { text: "Un ACL es más flexible que un Security Group", correct: false },
-            { text: "Ambos son idénticos en función", correct: false },
-            { text: "Un Security Group se aplica a subredes y un ACL a instancias", correct: false }
+            { text: "Los Security Groups permiten conexiones entrantes y salientes, mientras que los ACLs controlan el tráfico a nivel de subred y se evalúan en orden.", correct: true },
+            { text: "Los ACLs son más estrictos que los Security Groups, y los Security Groups se aplican después de los ACLs.", correct: false },
+            { text: "Ambos pueden configurarse para permitir o denegar el tráfico, pero solo los Security Groups pueden ser aplicados a múltiples instancias.", correct: false },
+            { text: "Los Security Groups se aplican antes que los ACLs, lo que significa que un ACL puede sobreescribir las reglas de un Security Group.", correct: false }
         ],
-        definition: "Un Security Group actúa como un firewall virtual para las instancias EC2, controlando el tráfico de entrada y salida, mientras que un Network ACL controla el tráfico a nivel de subred."
+        definition: "Los Security Groups actúan a nivel de instancia y son evaluados en un modo de 'permitir', mientras que los Network ACLs son evaluados en un modo de 'denegar' y funcionan a nivel de subred. Los ACLs se evalúan en orden, lo que puede afectar cómo se aplica el tráfico a las instancias en la VPC."
+    },
+   {
+        question: "Explique cómo AWS Lambda gestiona la infraestructura subyacente y cómo se traduce esto en costos.",
+        answers: [
+            { text: "AWS Lambda utiliza un modelo de pago por uso, donde solo pagas por el tiempo de ejecución y los recursos consumidos por tus funciones.", correct: true },
+            { text: "AWS Lambda cobra un precio fijo mensual, independientemente de si las funciones se ejecutan o no.", correct: false },
+            { text: "Los costos de AWS Lambda se basan únicamente en la cantidad de funciones desplegadas.", correct: false },
+            { text: "AWS Lambda requiere que aprovisiones los recursos, por lo que el costo depende de la cantidad de servidores que manejes.", correct: false }
+        ],
+        definition: "AWS Lambda gestiona automáticamente la infraestructura, lo que significa que no necesitas preocuparte por los servidores. Solo pagas por el tiempo de ejecución y la cantidad de memoria utilizada por tus funciones, lo que puede hacer que sea una opción rentable para cargas de trabajo intermitentes."
     },
     {
         question: "¿Qué servicio de AWS se utiliza para ejecutar código sin necesidad de aprovisionar servidores?",
