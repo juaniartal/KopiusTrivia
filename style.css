@@ -33,7 +33,7 @@ body {
 
 .btn-grid {
     display: grid;
-    grid-template-columns: repeat(2, auto);
+    grid-template-columns: repeat(2, 1fr); /* Cambié 'auto' a '1fr' para mejor distribución */
     gap: 10px;
 }
 
@@ -72,13 +72,13 @@ body {
 
 footer {
     background-color: rgba(255, 255, 255, 0.8);
-    padding: 5px;
+    padding: 10px;
     text-align: center;
     position: absolute;
     bottom: 0;
     left: 0;
     right: 0;
-    font-size: 12px; /* Tamaño de fuente más pequeño */
+    font-size: 12px; 
 }
 
 footer p {
@@ -98,9 +98,25 @@ footer li {
 footer a {
     color: #007bff;
     text-decoration: none;
-    font-size: 12px; /* Ajuste de tamaño para los enlaces */
+    font-size: 12px; 
 }
 
 footer a:hover {
     text-decoration: underline;
+}
+
+/* Estilos para dispositivos móviles */
+@media (max-width: 600px) {
+    #game-container {
+        padding: 10px; /* Menos padding en móviles */
+    }
+
+    .btn {
+        padding: 15px; /* Más grande para ser más fácil de pulsar en móviles */
+        font-size: 16px; /* Aumentar el tamaño de la fuente */
+    }
+
+    footer {
+        font-size: 10px; /* Más pequeño para móviles */
+    }
 }
