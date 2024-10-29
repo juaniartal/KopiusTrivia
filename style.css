@@ -81,6 +81,12 @@ footer {
     text-align: center;
     width: 100%; /* Asegurar que ocupe el 100% del ancho */
     font-size: 12px; 
+    transition: transform 0.3s; /* Transición suave para el footer */
+    transform: translateY(100%); /* Inicialmente ocultar el footer */
+}
+
+footer.show {
+    transform: translateY(0); /* Mostrar el footer al desplazar hacia abajo */
 }
 
 footer p {
