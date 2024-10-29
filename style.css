@@ -31,7 +31,9 @@ body {
     flex: 1; /* Permitir que el contenedor del juego tome espacio disponible */
     display: flex;
     flex-direction: column; /* Colocar elementos dentro en columna */
-    justify-content: center; /* Centrar verticalmente */
+    justify-content: center; /* Colocar elementos al centro verticalmente */
+    position: relative; /* Permitir que se ajuste dentro de su contenedor */
+    overflow: auto; /* Permitir desplazamiento interno */
 }
 
 .btn-grid {
@@ -77,7 +79,6 @@ footer {
     background-color: rgba(255, 255, 255, 0.8);
     padding: 10px;
     text-align: center;
-    position: relative; /* Cambiado a relative */
     width: 100%; /* Asegurar que ocupe el 100% del ancho */
     font-size: 12px; 
 }
