@@ -34,6 +34,7 @@ body {
     justify-content: center; /* Colocar elementos al centro verticalmente */
     position: relative; /* Permitir que se ajuste dentro de su contenedor */
     overflow: auto; /* Permitir desplazamiento interno */
+    margin-bottom: 60px; /* Espacio para el footer */
 }
 
 h1 {
@@ -139,4 +140,3 @@ footer a:hover {
         font-size: 10px; /* Más pequeño para móviles */
     }
 }
-
