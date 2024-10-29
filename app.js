@@ -8,7 +8,22 @@ const definitionElement = document.getElementById('definition');
 
 let currentQuestionIndex = 0;
 let score = 0;
+let lastScrollTop = 0;
+const footer = document.querySelector('footer');
 
+window.addEventListener('scroll', () => {
+    const scrollTop = window.scrollY;
+
+    if (scrollTop > lastScrollTop) {
+        // Desplazándose hacia abajo
+        footer.classList.remove('show');
+    } else {
+        // Desplazándose hacia arriba
+        footer.classList.add('show');
+    }
+    
+    lastScrollTop = scrollTop;
+});
 
 
 const questions = [
