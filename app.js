@@ -320,16 +320,6 @@ const questions = [
         definition: "Amazon RDS (Relational Database Service) es un servicio que facilita la configuración, operación y escalabilidad de bases de datos relacionales en la nube."
     },
     {
-        question: "¿Cuál es la función principal de una VPN en AWS?",
-        answers: [
-            { text: "Conectar redes privadas a través de Internet de forma segura", correct: true },
-            { text: "Almacenar datos en la nube", correct: false },
-            { text: "Gestionar el tráfico de red interno", correct: false },
-            { text: "Escalar instancias EC2", correct: false }
-        ],
-        definition: "Una VPN (Virtual Private Network) permite conectar redes privadas de forma segura a través de Internet, proporcionando una comunicación encriptada."
-    },
-    {
         question: "¿Qué es AWS CodePipeline?",
         answers: [
             { text: "Un servicio de integración y entrega continua", correct: true },
