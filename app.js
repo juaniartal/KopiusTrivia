@@ -27,7 +27,6 @@ window.addEventListener('scroll', () => {
 
 
 const questions = [
-    const questions = [
     {
         question: "Un cliente te solicita alojar una página web estática en AWS. ¿Cuál es el primer servicio que deberías considerar y por qué?",
         answers: [
@@ -188,7 +187,6 @@ const questions = [
         ],
         definition: "En una arquitectura de alta disponibilidad, se recomienda crear al menos una subnet pública y una privada en cada zona de disponibilidad (AZ) disponible en la región. Esto permite distribuir el tráfico, minimizando el riesgo de puntos únicos de fallo y facilitando una comunicación segura entre las subnets."
     }
-];
         {
         question: "En una configuración estándar de VPC, ¿cómo configuras subnets públicas y privadas y aseguras que las subnets privadas no tengan acceso directo a Internet?",
         answers: [
