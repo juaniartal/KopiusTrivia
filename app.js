@@ -126,7 +126,6 @@ const questions = [
         ],
         definition: "CloudFormation permite implementar y replicar infraestructura en AWS mediante archivos de plantilla, garantizando configuraciones consistentes y automatizadas."
     }
-];
 
         {
         question: "¿Qué configuraciones de seguridad y protocolos se deben considerar al utilizar un Application Load Balancer para tráfico HTTPS?",
