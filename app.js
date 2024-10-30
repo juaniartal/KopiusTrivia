@@ -124,7 +124,7 @@ const questions = [
             { text: "CloudTrail, dado que monitorea cambios en la infraestructura.", correct: false }
         ],
         definition: "CloudFormation permite implementar y replicar infraestructura en AWS mediante archivos de plantilla, garantizando configuraciones consistentes y automatizadas."
-    }
+    },
 
         {
         question: "¿Qué configuraciones de seguridad y protocolos se deben considerar al utilizar un Application Load Balancer para tráfico HTTPS?",
@@ -186,7 +186,7 @@ const questions = [
             { text: "La cantidad de subnets no influye en la disponibilidad, pero deben estar todas configuradas como privadas para maximizar la seguridad.", correct: false }
         ],
         definition: "En una arquitectura de alta disponibilidad, se recomienda crear al menos una subnet pública y una privada en cada zona de disponibilidad (AZ) disponible en la región. Esto permite distribuir el tráfico, minimizando el riesgo de puntos únicos de fallo y facilitando una comunicación segura entre las subnets."
-    }
+    },
         {
         question: "En una configuración estándar de VPC, ¿cómo configuras subnets públicas y privadas y aseguras que las subnets privadas no tengan acceso directo a Internet?",
         answers: [
