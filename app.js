@@ -27,6 +27,201 @@ window.addEventListener('scroll', () => {
 
 
 const questions = [
+    const questions = [
+    {
+        question: "Un cliente te solicita alojar una página web estática en AWS. ¿Cuál es el primer servicio que deberías considerar y por qué?",
+        answers: [
+            { text: "Amazon S3, porque permite alojar contenido estático de forma rentable y con alta disponibilidad.", correct: true },
+            { text: "Amazon EC2, ya que proporciona servidores para cualquier tipo de aplicación.", correct: false },
+            { text: "AWS Lambda, pues permite ejecutar funciones sin servidores de fondo.", correct: false },
+            { text: "Amazon RDS, ideal para almacenar datos de manera segura.", correct: false }
+        ],
+        definition: "Amazon S3 es ideal para alojar contenido estático, como HTML, CSS, JavaScript e imágenes, debido a su alta disponibilidad y costo accesible."
+    },
+
+    {
+        question: "Un cliente te pide implementar una web dinámica con una base de datos en AWS. ¿Qué servicio recomendarías para la base de datos y por qué?",
+        answers: [
+            { text: "Amazon RDS, ya que permite escalar y gestionar bases de datos relacionales.", correct: true },
+            { text: "AWS Lambda, porque permite gestionar datos en formato JSON.", correct: false },
+            { text: "Amazon DynamoDB, ya que es ideal para bases de datos NoSQL rápidas.", correct: false },
+            { text: "Amazon S3, dado que permite almacenar objetos de cualquier tamaño.", correct: false }
+        ],
+        definition: "Amazon RDS es adecuado para aplicaciones web que requieren una base de datos relacional con capacidad de gestión y escalabilidad."
+    },
+
+    {
+        question: "Para que una instancia EC2 sea accesible desde Internet, ¿qué configuraciones necesitas aplicar?",
+        answers: [
+            { text: "Asignarle una IP pública o elástica y configurar un Security Group que permita tráfico en los puertos 80 y 443.", correct: true },
+            { text: "Vincular un VPC Endpoint con la instancia y asignar un Security Group que permita solo HTTP.", correct: false },
+            { text: "Configurar un NAT Gateway y un ACL de red que permita tráfico a la IP pública.", correct: false },
+            { text: "Asignarle una IP privada y habilitar el tráfico de salida en el Security Group.", correct: false }
+        ],
+        definition: "Para que una instancia EC2 sea accesible desde Internet, necesita una IP pública, un Security Group configurado para tráfico HTTP/HTTPS y estar en una subnet pública."
+    },
+
+    {
+        question: "Un cliente necesita almacenar grandes cantidades de imágenes y vídeos para su sitio web. ¿Qué servicio de AWS recomendarías y por qué?",
+        answers: [
+            { text: "Amazon S3, por su capacidad de almacenar archivos de gran tamaño con fácil acceso.", correct: true },
+            { text: "AWS Lambda, ya que permite el almacenamiento temporal de grandes archivos.", correct: false },
+            { text: "Amazon EC2, debido a su flexibilidad para almacenar y procesar archivos de datos multimedia.", correct: false },
+            { text: "Amazon RDS, para almacenamiento optimizado y rápido acceso.", correct: false }
+        ],
+        definition: "Amazon S3 es el mejor servicio para almacenar grandes cantidades de datos como imágenes y videos, ofreciendo alta escalabilidad y accesibilidad directa."
+    },
+
+    {
+        question: "Un cliente quiere habilitar HTTPS para su sitio web en AWS. ¿Qué servicio de AWS puede proporcionarte un certificado SSL/TLS gratuito?",
+        answers: [
+            { text: "AWS Certificate Manager, que permite emitir y gestionar certificados SSL/TLS sin costo.", correct: true },
+            { text: "Route 53, al administrar dominios personalizados y certificación básica.", correct: false },
+            { text: "Amazon CloudFront, mediante sus configuraciones de caché y seguridad de conexión.", correct: false },
+            { text: "Amazon EC2, ya que permite configurar certificados directamente en cada instancia.", correct: false }
+        ],
+        definition: "AWS Certificate Manager permite gestionar certificados SSL/TLS gratuitos para HTTPS, integrándose fácilmente con servicios como CloudFront y Load Balancers."
+    },
+
+    {
+        question: "Tu cliente quiere mejorar la velocidad de su sitio web en distintas regiones del mundo. ¿Qué servicio de AWS recomendarías y por qué?",
+        answers: [
+            { text: "CloudFront, una red de distribución de contenido (CDN) que almacena contenido en ubicaciones cercanas a los usuarios.", correct: true },
+            { text: "Auto Scaling, que permite crear réplicas de instancias EC2 en distintas regiones.", correct: false },
+            { text: "Route 53, gestionando tráfico y resolviendo DNS globalmente.", correct: false },
+            { text: "Direct Connect, dado que mejora el rendimiento de red entre regiones.", correct: false }
+        ],
+        definition: "CloudFront es ideal para acelerar sitios web globalmente mediante la caché de contenido en ubicaciones cercanas a los usuarios, reduciendo la latencia."
+    },
+
+    {
+        question: "Un cliente espera un alto volumen de tráfico en su sitio web. ¿Qué servicio de AWS recomendarías para balancear el tráfico entre varias instancias de EC2?",
+        answers: [
+            { text: "Application Load Balancer, que distribuye tráfico entre varias instancias.", correct: true },
+            { text: "Network Load Balancer, ya que administra tráfico UDP para grandes volúmenes de datos.", correct: false },
+            { text: "Auto Scaling, ya que permite escalar las instancias EC2 según la demanda.", correct: false },
+            { text: "Amazon RDS, que balancea cargas entre bases de datos distribuidas.", correct: false }
+        ],
+        definition: "El Application Load Balancer distribuye el tráfico entre múltiples instancias EC2, ideal para aplicaciones web con alto volumen de usuarios."
+    },
+
+    {
+        question: "Tu cliente desea un dominio personalizado para su sitio en AWS. ¿Qué servicio de AWS facilita la compra y configuración de dominios?",
+        answers: [
+            { text: "Route 53, ya que permite registrar y gestionar nombres de dominio personalizados.", correct: true },
+            { text: "Amazon S3, donde es posible almacenar configuraciones de dominio y redireccionamiento.", correct: false },
+            { text: "CloudFront, que permite asociar un dominio personalizado a un distribuidor de contenido.", correct: false },
+            { text: "AWS Lambda, para gestionar y redirigir tráfico de dominios personalizados.", correct: false }
+        ],
+        definition: "Route 53 permite registrar, gestionar y configurar dominios personalizados, facilitando el enrutamiento del tráfico hacia los recursos de AWS."
+    },
+
+    {
+        question: "El cliente desea que la configuración de su infraestructura sea replicable y automatizable. ¿Qué servicio de AWS recomiendas para implementar 'infraestructura como código'?",
+        answers: [
+            { text: "CloudFormation, ya que permite definir y gestionar infraestructura mediante plantillas.", correct: true },
+            { text: "CodePipeline, que permite crear flujos de trabajo para automatizar despliegues.", correct: false },
+            { text: "Auto Scaling, ya que escala la infraestructura de forma automática.", correct: false },
+            { text: "CloudTrail, dado que monitorea cambios en la infraestructura.", correct: false }
+        ],
+        definition: "CloudFormation permite implementar y replicar infraestructura en AWS mediante archivos de plantilla, garantizando configuraciones consistentes y automatizadas."
+    }
+];
+
+        {
+        question: "¿Qué configuraciones de seguridad y protocolos se deben considerar al utilizar un Application Load Balancer para tráfico HTTPS?",
+        answers: [
+            { text: "Debe configurarse un certificado SSL en el ALB, y se recomienda usar políticas de seguridad avanzadas como TLS 1.2 para proteger el tráfico de capa 7.", correct: true },
+            { text: "Es suficiente con configurar HTTPS en las instancias EC2 del Target Group sin necesidad de modificar el Load Balancer.", correct: false },
+            { text: "El ALB soporta únicamente HTTP, por lo que la seguridad de HTTPS debe implementarse directamente en cada instancia.", correct: false },
+            { text: "Para habilitar HTTPS en un ALB, basta con usar una conexión VPN sin necesidad de certificados adicionales.", correct: false }
+        ],
+        definition: "Para asegurar el tráfico HTTPS en un Application Load Balancer, se debe configurar un certificado SSL en el ALB y aplicar políticas de seguridad TLS avanzadas. Esto permite encriptar las solicitudes y proteger los datos de los usuarios."
+    },
+        {
+        question: "¿Cómo funcionan las reglas de enrutamiento en un Application Load Balancer y cuál es un caso de uso típico?",
+        answers: [
+            { text: "Las reglas de enrutamiento permiten definir condiciones para redirigir el tráfico a diferentes Target Groups según la URL solicitada, lo que es útil en aplicaciones con múltiples microservicios.", correct: true },
+            { text: "Las reglas de enrutamiento redirigen automáticamente todo el tráfico entrante al primer Target Group sin necesidad de configuraciones adicionales.", correct: false },
+            { text: "Las reglas solo se aplican cuando hay fallas en el Target Group principal y permiten reintentar solicitudes a otras instancias.", correct: false },
+            { text: "El enrutamiento siempre dirige el tráfico al Target Group configurado por defecto, lo cual no puede modificarse.", correct: false }
+        ],
+        definition: "Las reglas de enrutamiento en un Application Load Balancer permiten definir condiciones específicas para redirigir tráfico según la URL, encabezados o patrones de ruta, lo cual es especialmente útil en arquitecturas con microservicios."
+    },
+        {
+        question: "¿Qué es un health check en un Load Balancer y cómo funciona para asegurar la disponibilidad de las instancias?",
+        answers: [
+            { text: "Un health check monitorea la salud de las instancias verificando su respuesta en un endpoint específico, y redirige el tráfico a instancias sanas si una falla.", correct: true },
+            { text: "Un health check balancea el tráfico entre las instancias dependiendo de su capacidad de procesamiento.", correct: false },
+            { text: "El health check se usa para asegurar que el Load Balancer distribuya tráfico solo a instancias que no tengan alta latencia.", correct: false },
+            { text: "El health check monitorea la infraestructura de red para asegurar que solo se use ancho de banda optimizado en las instancias.", correct: false }
+        ],
+        definition: "Un health check en un Load Balancer permite verificar la disponibilidad de las instancias, asegurando que solo se envíe tráfico a las instancias que respondan de manera correcta y se encuentren en buen estado."
+    },
+        {
+        question: "¿Cómo distribuye el tráfico un Application Load Balancer entre las instancias dentro de un Target Group?",
+        answers: [
+            { text: "El ALB utiliza algoritmos de balanceo como round-robin y routing basado en reglas de capa 7 para distribuir el tráfico entre las instancias en un Target Group.", correct: true },
+            { text: "El ALB distribuye el tráfico aleatoriamente entre las instancias, sin utilizar reglas de capa 7.", correct: false },
+            { text: "El ALB solo soporta balanceo en una sola AZ, usando un único algoritmo de round-robin.", correct: false },
+            { text: "El ALB siempre envía el tráfico al destino menos ocupado en términos de latencia.", correct: false }
+        ],
+        definition: "El Application Load Balancer distribuye el tráfico entre las instancias de un Target Group utilizando algoritmos de balanceo, como round-robin y routing avanzado de capa 7, permitiendo una distribución equilibrada del tráfico."
+    },
+        {
+        question: "¿Cuál es la diferencia entre un Application Load Balancer (ALB) y un Network Load Balancer (NLB) en AWS?",
+        answers: [
+            { text: "El ALB opera en la capa 7 del modelo OSI, ideal para aplicaciones web HTTP/HTTPS, mientras que el NLB opera en la capa 4 y se usa para aplicaciones de baja latencia y alto rendimiento.", correct: true },
+            { text: "El ALB opera en la capa 4 del modelo OSI, mientras que el NLB opera en la capa 7 y es ideal para tráfico HTTP/HTTPS.", correct: false },
+            { text: "Ambos operan en la capa 4 y tienen el mismo propósito, pero el ALB solo se usa en VPC privadas.", correct: false },
+            { text: "El NLB es una versión mejorada del ALB que funciona exclusivamente en tráfico HTTP/HTTPS.", correct: false }
+        ],
+        definition: "El Application Load Balancer (ALB) opera en la capa 7 del modelo OSI, es ideal para aplicaciones web HTTP/HTTPS y permite el enrutamiento avanzado, mientras que el Network Load Balancer (NLB) opera en la capa 4, siendo adecuado para aplicaciones de baja latencia y alto rendimiento."
+    },
+
+        {
+        question: "En una arquitectura de alta disponibilidad con múltiples zonas de disponibilidad (AZ), ¿cuántas subnets deberías crear y cómo definirías su uso?",
+        answers: [
+            { text: "Debes crear al menos una subnet pública y una privada en cada AZ, para distribuir el tráfico y evitar puntos únicos de fallo, manteniendo las aplicaciones privadas sin acceso directo a Internet.", correct: true },
+            { text: "Solo necesitas una subnet pública por VPC y el resto deben ser privadas en cualquier AZ.", correct: false },
+            { text: "Debes crear una única subnet pública en una AZ principal y todas las subnets privadas en las demás AZs para maximizar la seguridad.", correct: false },
+            { text: "La cantidad de subnets no influye en la disponibilidad, pero deben estar todas configuradas como privadas para maximizar la seguridad.", correct: false }
+        ],
+        definition: "En una arquitectura de alta disponibilidad, se recomienda crear al menos una subnet pública y una privada en cada zona de disponibilidad (AZ) disponible en la región. Esto permite distribuir el tráfico, minimizando el riesgo de puntos únicos de fallo y facilitando una comunicación segura entre las subnets."
+    }
+];
+        {
+        question: "En una configuración estándar de VPC, ¿cómo configuras subnets públicas y privadas y aseguras que las subnets privadas no tengan acceso directo a Internet?",
+        answers: [
+            { text: "Asignando un Internet Gateway a la VPC y asociándolo solo a las subnets públicas, mientras que las subnets privadas pueden usar un NAT Gateway o NAT Instance para tener acceso limitado a Internet.", correct: true },
+            { text: "Asignando un Internet Gateway solo a las subnets privadas y usando Network ACLs para bloquear el tráfico entrante.", correct: false },
+            { text: "Usando una VPN conectada a las subnets públicas para proporcionar acceso seguro a Internet y manteniendo las privadas aisladas.", correct: false },
+            { text: "Configurando un VPC Endpoint en la subnet privada para otorgar acceso a Internet solo a servicios de AWS.", correct: false }
+        ],
+        definition: "En una configuración estándar de VPC, las subnets públicas están asociadas con un Internet Gateway, permitiendo el acceso directo a Internet. Las subnets privadas, sin un Internet Gateway, pueden acceder a Internet a través de un NAT Gateway o NAT Instance, lo cual permite la salida pero bloquea el tráfico entrante de Internet."
+    },
+        {
+        question: "¿Cuál es la función de los Target Groups en un Application Load Balancer (ALB) y cómo ayuda en la escalabilidad de aplicaciones?",
+        answers: [
+            { text: "Los Target Groups definen los destinos de tráfico, como instancias EC2 o funciones Lambda, y facilitan la escalabilidad al distribuir el tráfico automáticamente.", correct: true },
+            { text: "Los Target Groups almacenan configuraciones de enrutamiento avanzadas que pueden mejorar el tiempo de respuesta de la aplicación.", correct: false },
+            { text: "Un Target Group solo puede estar asociado con un único Load Balancer para asegurar la seguridad de la red.", correct: false },
+            { text: "Los Target Groups permiten asignar direcciones IP directas, evitando la necesidad de un Load Balancer.", correct: false }
+        ],
+        definition: "Los Target Groups en un Application Load Balancer permiten agrupar y definir los destinos de tráfico, como instancias EC2 o funciones Lambda, facilitando la distribución dinámica y escalabilidad automática de las aplicaciones."
+    },
+    
+    {
+        question: "¿Cómo se puede configurar una política de enrutamiento geográfico en Amazon Route 53 y en qué situaciones es útil?",
+        answers: [
+            { text: "La política de enrutamiento geográfico dirige el tráfico basado en la ubicación geográfica del usuario, útil para mejorar la latencia y cumplir con requisitos regulatorios.", correct: true },
+            { text: "La política de enrutamiento geográfico se basa en la proximidad de la región de AWS y permite reducir costos.", correct: false },
+            { text: "Route 53 asigna automáticamente una ubicación geográfica óptima sin necesidad de configuración manual.", correct: false },
+            { text: "Las políticas de enrutamiento geográfico requieren la configuración de varias VPCs en distintas regiones para funcionar.", correct: false }
+        ],
+        definition: "El enrutamiento geográfico en Amazon Route 53 permite dirigir el tráfico en función de la ubicación geográfica del usuario, lo que es útil para cumplir con requisitos locales de residencia de datos o reducir la latencia al servir contenido desde la región más cercana."
+    },
+    
     {
         question: "¿Cómo afectan los Security Groups y los Network ACLs en la configuración de una VPC?",
         answers: [
